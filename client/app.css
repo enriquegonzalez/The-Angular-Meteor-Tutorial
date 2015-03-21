@@ -103,6 +103,8 @@ html, body {
   padding: .3rem;
   position: relative;
   bottom: .15rem;
+  width: 2rem;
+  text-align: center;
 
 }
 
