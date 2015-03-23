@@ -1,13 +1,20 @@
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
 </head>
 <body>
 
-  <div ng-app="socially">
-    <h1>
-      <a href="/parties">Home</a>
-    </h1>
+  <div class="container" ng-app="socially">
+    <div class="row">
+      <div class="twelve columns">
+        <nav>
+          <a href="/parties">Home</a>
+        </nav>
+      </div>
+    </div>
+
     <div ui-view></div>
+
   </div>
 
 </body>

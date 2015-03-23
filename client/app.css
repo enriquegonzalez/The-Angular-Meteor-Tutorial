@@ -1,17 +1,18 @@
-html, body {
-  padding: 1rem;
+html,
+body {
+  font-size: 100%;
+  height: 100%;
 }
 
 .container {
-  clear: both;
+  max-width: 1024px;
+  padding: 1rem;
 }
 
 /*PARTY MAKER*/
 
 .party-maker {
-  float: left;
   margin-top: 5rem;
-  width: 30%;
 }
 
 .form--parties {
@@ -21,7 +22,7 @@ html, body {
 }
 
 .form__field {
-  padding: 1rem;
+  /*padding: 1rem;*/
 }
 
 .form__actions {
@@ -36,8 +37,7 @@ html, body {
 .form__field > input {
   border: none;
   border-bottom: 1px solid black;
-  height: 2rem;
-  width: 100%;
+  height: 3rem;
 }
 
 .form__field > input:focus {
@@ -47,10 +47,8 @@ html, body {
 /*PARTY INFO*/
 
 .party-info {
-  float: right;
-  width: 65%;
-}
 
+}
 
 .party-total {
   font-size: 1.5rem;
@@ -59,57 +57,24 @@ html, body {
 }
 
 .party-total__count {
-  display: inline-block;
-  background: hsla(0, 0%, 87%, 1);
-  border-radius: 1.5rem;
-  padding: .65rem;
-  height: 1.1rem;
-  width: 1.1rem;
-  text-align: center;
-  vertical-align: middle;
+  color: hsla(360, 100%, 70%, 1);
 }
 
 .menu {
   text-align: right;
 }
 
-.remove-all{
-  /*border-bottom: 1px solid hsla(360, 100%, 70%, 1);*/
+.button--remove-all{
   color: hsla(360, 100%, 70%, 1);
-  cursor: pointer;
-  cursor: hand;
-  display: inline-block;
   font-family: 'Open Sans', Helvetica, Arial, Sans-Serif;
   font-size: .85rem;
   letter-spacing: .065rem;
-  padding: .25rem .5rem;
+  overflow: hidden;
   text-transform: uppercase;
 }
 
-.remove-all:hover{
-  /*border-bottom: 1px solid hsla(360, 100%, 40%, 1);*/
+.button--remove-all:hover{
   color: hsla(360, 100%, 40%, 1);
-}
-
-.remove-all:before{
-  content: '\0078  ';
-  background: hsla(360, 100%, 70%, 1);
-  color: hsla(360, 100%, 100%, 1);
-  display: inline-block;
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: normal;
-  margin-right: .5rem;
-  padding: .3rem;
-  position: relative;
-  bottom: .15rem;
-  width: 2rem;
-  text-align: center;
-
-}
-
-.remove-all:hover:before{
-  background: hsla(360, 100%, 40%, 1);
 }
 
 
@@ -120,7 +85,7 @@ html, body {
 
 .party {
   border-bottom: 1px solid hsla(0, 0%, 0%, .45);
-  padding: 2rem;
+  padding: 2rem 0;
   position: relative;
 }
 
@@ -132,84 +97,41 @@ html, body {
 .party__desc {
   font-size: 1.5rem;
   font-style: italic;
-  margin: 0 0 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
 
-
-/* BUTTONS */
-
-.btn {
-  background: transparent;
-  cursor: pointer;
-  cursor: hand;
-  font-size: 1.25rem;
-  padding: .65rem 1rem;
-  text-transform: uppercase;
-  width: 7rem;
-}
-
-.btn:active, .btn:focus {
-  outline: none;
-}
-
-.btn--close {
-  background: hsla(360, 100%, 70%, 1);
-  border: none;
-  color: hsla(360, 100%, 100%, 1);
-  display: inline-block;
-  font-size: .85rem;
-  font-weight: 600;
-  padding: .2rem;
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  width: 3rem;
-}
-
-// Small screens
-@media only screen { } /* Define mobile styles */
-
-@media only screen and (max-width: 40em) {
-
-  .party-maker, .party-info {
-    float: none;
+.one-third.column {
     width: 100%;
   }
 
-  .party {
-    padding: 1.65rem 0;
-    overflow: hidden;
-  }
-
-  .btn--close {
-    position: initial;
-    float: right;
-  }
-
-
-} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
-
-// Medium screens
-@media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-
-  .party-maker, .party-info {
-    float: none;
+  .two-thirds.column {
     width: 100%;
   }
 
-} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
-// Large screens
-@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+/* Mobile first queries */
 
-// XLarge screens
-@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+/* Larger than mobile */
+@media (min-width: 400px) {}
 
-@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+/* Larger than phablet */
+@media (min-width: 550px) {}
 
-// XXLarge screens
-@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  .one-third.column {
+    width: 30.6666666667%;
+  }
+
+  .two-thirds.column {
+    width: 65.3333333333%;
+  }
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

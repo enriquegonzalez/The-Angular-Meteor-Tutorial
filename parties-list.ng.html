@@ -1,40 +1,40 @@
-<div class="container" ng-controller="PartiesListCtrl">
+<div class="row">
 
-<div class="party-maker">
+<div class="one-third column party-maker">
   <form class="form--parties">
     <div class="form__field">
       <label>Party Name:</label>
-      <input ng-model="newParty.name">
+      <input class="u-full-width" ng-model="newParty.name">
     </div>
     <div class="form__field">
       <label>Description:</label>
-      <input ng-model="newParty.description">
+      <input class="u-full-width" ng-model="newParty.description">
     </div>
     <div class="form__actions">
       <!-- pusing into the collection. It works, but it's not great for performance  -->
         <!-- <button class="btn btn--submit" ng-click="parties.push(newParty); newParty='';">Add</button> -->
       <!-- Instead let's use $meteor.collection's save helper function -->
-        <button class="btn btn--submit" ng-click="parties.save(newParty); newParty='';">Add</button>
+        <button class="button button-primary" ng-click="parties.save(newParty); newParty='';">Add</button>
     </div>
   </form>
 </div>
 
-<div class="party-info">
+<div class="two-thirds column party-info">
   <p class="party-total">
     Total number of parties:
     <span class="party-total__count">{{parties.length}}</span>
   </p>
   <div class="menu">
-    <a class="remove-all" ng-click="removeAll()">remove all</a>
+    <a class="button button--remove-all" ng-click="removeAll()">remove all</a>
   </div>
 
   <ul class="list--parties">
-    <li class="party" ng-repeat="party in parties">
+    <li class="u-cf u-full-width party" ng-repeat="party in parties">
       <p class="party__name">
         <a href="/parties/{{party._id}}">{{party.name}}</a>
       </p>
       <p class="party__desc">{{party.description}}</p>
-      <button class="btn btn--close" ng-click="remove(party)">&times;</button>
+      <button class="u-pull-right button button--remove" ng-click="remove(party)">&times;</button>
     </li>
   </ul>
 </div>
