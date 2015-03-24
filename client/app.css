@@ -9,6 +9,13 @@ body {
   padding: 1rem;
 }
 
+.page-title {
+  font-size: 1.65rem;
+  letter-spacing: .10rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+}
+
 /*PARTY MAKER*/
 
 .party-maker {
@@ -40,7 +47,15 @@ body {
   height: 3rem;
 }
 
-.form__field > input:focus {
+.form__field > textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 7rem;
+  padding: 0;
+}
+
+.form__field > input:focus,
+.form__field > textarea:focus {
   outline: none;
 }
 
@@ -75,6 +90,18 @@ body {
 
 .button--remove-all:hover{
   color: hsla(360, 100%, 40%, 1);
+}
+
+.button--remove {
+  border: none;
+  color: hsla(360, 100%, 70%, 1);
+  font-size: 2rem;
+}
+
+.button--remove:hover {
+  border: none;
+  color: hsla(360, 100%, 40%, 1);
+  font-size: 2rem;
 }
 
 
