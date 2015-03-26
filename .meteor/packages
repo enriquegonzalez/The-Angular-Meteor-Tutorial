@@ -6,8 +6,9 @@
 
 meteor-platform
 autopublish
-insecure
 urigo:angular
 angularui:angular-ui-router
 mrt:normalize.css
 skeleton:skeleton
+accounts-password
+accounts-ui

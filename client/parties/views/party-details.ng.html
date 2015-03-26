@@ -20,8 +20,9 @@
       </div>
 
       <div class="form__actions">
-        <button class="button-primary" ng-click="save()">Save</button>
+        <button class="button-primary" ng-click="save()">{{stateMessage}}</button>
         <a class="button" ng-click="reset()" href="/parties">Cancel</a>
+        <!-- <div class="form__action-state" ng-show="stateMessage">{{stateMessage}}</div> -->
       </div>
     </form>
   </div>

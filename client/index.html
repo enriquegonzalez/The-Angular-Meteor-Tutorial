@@ -6,10 +6,15 @@
 
   <div class="container" ng-app="socially">
     <div class="row">
-      <div class="twelve columns">
-        <nav>
-          <a href="/parties">Home</a>
+      <div class="nine columns">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="/parties" class="nav__link">Home</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="three columns">
+        <meteor-include src="loginButtons"></meteor-include>
       </div>
     </div>
 
