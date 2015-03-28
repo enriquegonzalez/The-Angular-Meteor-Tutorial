@@ -3,9 +3,11 @@ Meteor.startup(function () {
 
     var parties = [
       {'name': 'Popeye Party',
-        'description': 'Spinach, Olives, Tobacco, and more. . .'},
+        'description': 'Spinach, Olives, Tobacco, and more. . .',
+        'owner': '6KHtWinP9FWSzvefA'},
       {'name': 'All DUBSTEP',
-        'description': 'wowowowooooooomp WOMPWOMPWAAAAAOOAOAOAOAOMP chirp!'}
+        'description': 'wowowowooooooomp WOMPWOMPWAAAAAOOAOAOAOAOMP chirp!',
+        'owner': '6KHtWinP9FWSzvefA'}
     ];
 
     for (var i = 0; i < parties.length; i++) {
