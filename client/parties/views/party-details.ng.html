@@ -19,6 +19,11 @@
         <textarea class="u-full-width" ng-model="party.description"></textarea>
       </div>
 
+      <div class="form__field">
+        <label class="form__label--checkbox" for="public">Make Public:</label>
+        <input type="checkbox" name="public" ng-model="party.public">
+      </div>
+
       <div class="form__actions">
         <button class="button-primary" ng-click="save()">{{saveState}}</button>
         <a class="button" ng-click="reset()" href="/parties">Cancel</a>

@@ -45,6 +45,10 @@ ul {
   margin-right: 1rem;
 }
 
+.form__label--checkbox {
+  display: inline-block;
+}
+
 .form__field > input {
   border: none;
   border-bottom: 1px solid black;
@@ -61,6 +65,10 @@ ul {
 .form__field > input:focus,
 .form__field > textarea:focus {
   outline: none;
+}
+
+.form__field > input[type="checkbox"] {
+  height: 1rem; /* temporary, for design set to display none and use image sprite */
 }
 
 /*PARTY INFO*/
@@ -129,6 +137,7 @@ ul {
   font-size: 1.5rem;
   font-style: italic;
   margin: 1rem 0 2rem 0;
+  word-wrap: break-word;
 }
 
 .one-third.column {

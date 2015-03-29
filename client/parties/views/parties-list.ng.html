@@ -10,6 +10,10 @@
       <label>Description:</label>
       <input class="u-full-width" ng-model="newParty.description">
     </div>
+    <div class="form__field">
+      <label class="form__label--checkbox" for="public">Make Public: </label>
+      <input type="checkbox" name="public" ng-model="newParty.public">
+    </div>
     <div class="form__actions">
       <!-- pusing into the collection. It works, but it's not great for performance  -->
         <!-- <button class="btn btn--submit" ng-click="parties.push(newParty); newParty='';">Add</button> -->
