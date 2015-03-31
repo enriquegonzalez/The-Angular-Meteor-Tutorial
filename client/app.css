@@ -198,13 +198,13 @@ ul {
 .party__name {
   font-size: 2rem;
   margin: 0 0 .25rem 0;
+  text-transform: capitalize;
 }
 
 .party__desc {
   font-size: 1.5rem;
   font-style: italic;
   margin: 1rem 0 2rem 0;
-  text-transform: capitalize;
   -ms-word-break: break-all;
       word-break: break-all;
       word-break: break-word;
