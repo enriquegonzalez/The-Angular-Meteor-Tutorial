@@ -1,34 +1,50 @@
 <section>
-<div class="row">
-  <div class="twelve columns">
-    <header>
-      <h2 class="page-title">Edit Party</h2>
-    </header>
+  <div class="row">
+    <div class="twelve columns">
+      <header>
+        <h2 class="page-title">Edit Party</h2>
+      </header>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="twelve columns party-editor">
-    <form class="form--parties">
-      <div class="form__field">
-        <label>Party Name:</label>
-        <input class="u-full-width" ng-model="party.name">
-      </div>
-      <div class="form__field">
-        <label>Description:</label>
-        <textarea class="u-full-width" ng-model="party.description"></textarea>
-      </div>
+  <div class="row">
+    <div class="twelve columns party-editor">
+      <form class="form--parties">
+        <div class="form__field">
+          <label>Party Name:</label>
+          <input class="u-full-width" ng-model="party.name">
+        </div>
+        <div class="form__field">
+          <label>Description:</label>
+          <textarea class="u-full-width" ng-model="party.description"></textarea>
+        </div>
 
-      <div class="form__field">
-        <label class="form__label--checkbox" for="public">Make Public:</label>
-        <input type="checkbox" name="public" ng-model="party.public">
-      </div>
+        <div class="form__field">
+          <label class="form__label--checkbox" for="public">Make Public:</label>
+          <input type="checkbox" name="public" ng-model="party.public">
+        </div>
 
-      <div class="form__actions">
-        <button class="button-primary" ng-click="save()">{{saveState}}</button>
-        <a class="button" ng-click="reset()" href="/parties">Cancel</a>
-      </div>
-    </form>
+        <div class="form__actions">
+          <button class="button-primary" ng-class="{'button--error' : saveState === 'error'}" ng-click="save()">{{saveState}}</button>
+          <a class="button" ng-click="reset()" href="/parties">Cancel</a>
+        </div>
+        <div ng-show="saveState == 'error'">
+          <p class="message message--error">You don't have permission to change the party.</p>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+
+  <div class="row">
+    <div class="twelve columns users">
+      <section class="users">
+      <h2 class="section-title">Guests</h2>
+        <ul class="user-list">
+          <li class="user" ng-repeat="user in users">
+              {{user.emails[0].address}}
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </section>

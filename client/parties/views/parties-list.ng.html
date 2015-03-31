@@ -1,6 +1,13 @@
 <div class="row">
+  <div class="twelve columns">
+    <h1 class="page-title">Socially</h1>
+    <p class="tag-line">Where the partys are</p>
+  </div>
+</div>
 
-<div class="one-third column party-maker">
+<div class="row">
+
+<div class="one-third column party-maker" ng-show="currentUser">
   <form class="form--parties">
     <div class="form__field">
       <label>Party Name:</label>
@@ -15,30 +22,31 @@
       <input type="checkbox" name="public" ng-model="newParty.public">
     </div>
     <div class="form__actions">
-      <!-- pusing into the collection. It works, but it's not great for performance  -->
+      <!-- pushing into the collection. It works, but it's not great for performance  -->
         <!-- <button class="btn btn--submit" ng-click="parties.push(newParty); newParty='';">Add</button> -->
       <!-- Instead let's use $meteor.collection's save helper function -->
-        <button class="button button-primary" ng-click="newParty.owner=$root.currentUser._id; parties.save(newParty); newParty=''">Add</button>
+        <button class="button button-primary" ng-click="newParty.owner=$root.currentUser._id; parties.save(newParty); newParty=''">Add Party</button>
     </div>
   </form>
 </div>
 
-<div class="two-thirds column party-info">
+<div class="party-info" ng-class="{'two-thirds column': currentUser}">
   <p class="party-total">
-    Total number of parties:
+    Parties:
     <span class="party-total__count">{{parties.length}}</span>
   </p>
   <div class="menu">
-    <a class="button button--remove-all" ng-click="removeAll()">remove all</a>
+    <!-- This should only exist in an admin view -->
+    <!-- <a class="button button--remove-all" ng-click="removeAll()">remove all</a> -->
   </div>
 
   <ul class="list--parties">
     <li class="u-cf u-full-width party" ng-repeat="party in parties">
       <p class="party__name">
-        <a href="/parties/{{party._id}}">{{party.name}}</a>
+        {{party.name}} <span class="owner-menu__item" ng-show="isOwner(currentUser,party);">&mdash; <a href="/parties/{{party._id}}">edit</a></span>
       </p>
       <p class="party__desc">{{party.description}}</p>
-      <button class="u-pull-right button button--remove" ng-click="remove(party)">&times;</button>
+      <button class="u-pull-right button button--remove" ng-show="isOwner(currentUser,party);" ng-click="remove(party)">&times;</button>
     </li>
   </ul>
 </div>

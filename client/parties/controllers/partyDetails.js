@@ -1,8 +1,10 @@
 angular.module("socially").controller("PartyDetailsCtrl", ['$scope', '$stateParams', '$meteor',
 function($scope, $stateParams, $meteor){
 
+
   $scope.saveState = "save";
-  $scope.party = $meteor.object(Parties, $stateParams.partyId, false);
+  $scope.party = $meteor.object(Parties, $stateParams.partyId, false).subscribe('parties');
+  $scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
 
   $scope.$watchGroup(['party.name', 'party.description'], function(newVal, oldVal) {
     if(!newVal) return;

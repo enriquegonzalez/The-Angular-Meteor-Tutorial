@@ -6,8 +6,8 @@ Meteor.startup(function () {
         'description': 'Spinach, Olives, Tobacco, and more. . .',
         'owner': '6KHtWinP9FWSzvefA',
         'public': true},
-      {'name': 'All DUBSTEP',
-        'description': 'wowowowooooooomp WOMPWOMPWAAAAAOOAOAOAOAOMP chirp!',
+      {'name': 'DUBSTEP Only!',
+        'description': 'wowowowooooooomp what WOMPWOMPWAAA -A- AOOAOAOAOAOMP nightmare chirp!',
         'owner': '6KHtWinP9FWSzvefA',
         'public': true}
     ];

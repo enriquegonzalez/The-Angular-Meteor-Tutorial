@@ -3,21 +3,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <base href="/">
 </head>
-<body>
+<body ng-app="socially">
 
-  <div class="container" ng-app="socially">
-    <div class="row">
-      <div class="nine columns">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="/parties" class="nav__link">Home</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="three columns">
-        <meteor-include src="loginButtons"></meteor-include>
-      </div>
+<div class="top-bar">
+  <div class="top-bar__contents u-cf">
+    <div class="user-state u-pull-left">
+      <meteor-include src="loginButtons"></meteor-include>
     </div>
+    <nav class="nav u-pull-left">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="/parties" class="nav__link">Home</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+  <div class="container">
 
     <div ui-view></div>
 
