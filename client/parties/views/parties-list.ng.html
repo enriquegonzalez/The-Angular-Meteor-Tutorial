@@ -1,7 +1,7 @@
 <div class="row">
   <div class="twelve columns">
     <h1 class="page-title">Socially</h1>
-    <p class="tag-line">Where the partys are</p>
+    <p class="tag-line">Where the parties are</p>
   </div>
 </div>
 
@@ -18,9 +18,13 @@
       <input class="u-full-width" ng-model="newParty.description">
     </div>
     <div class="form__field">
-      <label class="form__label--checkbox" for="public">Make Public: </label>
-      <input type="checkbox" name="public" ng-model="newParty.public">
+      <input type="checkbox" id="public" name="public" ng-model="newParty.public">
+      <label class="form__label--checkbox" for="public">Make Public: <span class="form__checkbox"></span></label>
     </div>
+
+    <!-- <input type="checkbox" id="c1" name="cc" />
+    <label for="c1"><span></span>Check Box 1</label> -->
+
     <div class="form__actions">
       <!-- pushing into the collection. It works, but it's not great for performance  -->
         <!-- <button class="btn btn--submit" ng-click="parties.push(newParty); newParty='';">Add</button> -->
@@ -46,6 +50,9 @@
         {{party.name}} <span class="owner-menu__item" ng-show="isOwner(currentUser,party);">&mdash; <a href="/parties/{{party._id}}">edit</a></span>
       </p>
       <p class="party__desc">{{party.description}}</p>
+      <div class="party__note">
+        <p class="party__privacy">{{party.public ? 'open to the public' : 'private party'}}</p>
+      </div>
       <button class="u-pull-right button button--remove" ng-show="isOwner(currentUser,party);" ng-click="remove(party)">&times;</button>
     </li>
   </ul>
